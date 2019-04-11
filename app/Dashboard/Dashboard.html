@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="headCont">
+
+    <h1 class="title">{{name}}</h1>
+      <input type="text" ng-model="modFilter">
+    </div>
+
+<br>
+    <uib-accordion close-others=true>
+       <div uib-accordion-group class="" is-open="status.open">
+        <uib-accordion-heading>
+          Employees <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+        </uib-accordion-heading>
+        <li ng-repeat="emp in employees | filter: modFilter">
+          No: {{emp.no}}, Name: {{emp.firstName}} {{emp.lastName}}, BirthDate: {{emp.birthDate}}, Gender: {{emp.gender}}, HireDate: {{emp.hireDate}}
+        </li>
+      </div>
+
+
+      <div uib-accordion-group class="" is-open="status1.open">
+       <uib-accordion-heading>
+         Departments <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status1.open, 'glyphicon-chevron-right': !status1.open}"></i>
+       </uib-accordion-heading>
+       <li ng-repeat="dept in departments | filter: modFilter">
+         No: {{dept.no}}, Code: {{dept.code}}, Name: {{dept.name}}
+       </li>
+     </div>
+
+
+    <div uib-accordion-group class="" is-open="status2.open" >
+     <uib-accordion-heading>
+       Tasks <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status2.open, 'glyphicon-chevron-right': !status2.open}"></i>
+     </uib-accordion-heading>
+
+
+        <li ng-repeat="task in tasks">
+          No: {{task.no}}, DeptNo: {{task.deptNo}}, Title: {{task.title}}, Description: {{task.description}}, Status: {{task.status}}
+        </li>
+      </table>
+
+   </div>
+ </uib-accordion>
+</div>

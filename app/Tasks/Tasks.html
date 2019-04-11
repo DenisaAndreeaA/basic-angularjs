@@ -1,0 +1,80 @@
+<div class="container">
+<div class="headCont">
+
+  <h1 class="title">{{name}}</h1>
+  <input type="text" ng-model="taskFilter">
+  </div>
+
+<br>
+
+  <table class="table table-striped table text-capitalize">
+    <tr class="bg-success">
+        <th class="lead">Name</th>
+      <th class="lead">Show</th>
+      <th class="lead">Update</th>
+      <th class="lead">Remove</th>
+    </tr>
+
+
+    <tr class="listItems" ng-repeat="item in items | filter: taskFilter">
+
+   
+
+      <td class="h4 bg-success">
+        {{item.title}}
+        <table>
+          <tr ng-repeat="(key, value) in item" ng-show="clicked">
+            <td>{{key}}</td>
+            <td>{{value}}</td>
+        </tr>
+        </table>
+
+      </td>
+
+
+      <td class="bg-success">
+        <a class="btn btn-info" ng-click="clicked=true" ng-hide="clicked">Description</a>
+       <a class="btn btn-info" ng-click="clicked=false" ng-show="clicked">Hide</a>
+      </td>
+
+      <td class="bg-success">
+      <a class="btn btn-info" ng-show="!showUpdate" ng-click="newName = item.name; newDesc = item.description; showUpdate = true">Show</a>
+
+        <div ng-show="showUpdate" >
+          <input type="text" ng-model="item.title"/>
+          <input type="text" ng-model="newDesc"/>
+          <input type="button" value="OK" ng-click="showUpdate = false;">
+        </div>
+      </td>
+
+      <td class="bg-success">
+      <a class="btn btn-danger" ng-click="removeItem(item)">X</a>
+      </td>
+    </tr>
+
+  </table>
+   
+
+<br>
+
+<table class="table text-capitalize">
+  <tr>
+    <th colspan="4"  class="lead">Add new task</th>
+    <th><a class="btn btn-warning" ng-click="addItem(nItem)">Add</a></th>
+  </tr>
+<tr>
+  <td><input type="text" ng-model="nItem.DeptNo" placeholder="DeptNo"/></td>
+  <td><input type="text" ng-model="nItem.Title" placeholder="Title"/></td>
+  <td><input type="text" ng-model="nItem.Desc" placeholder="Description"/></td>
+  <td><input type="text" ng-model="nItem.Status" placeholder="Status"/></td>
+  </tr>
+
+  <tr>
+  <td><input type="text" ng-model="nItem.Fin" placeholder="FinishDate"/></td>
+  <td><input type="text" ng-model="nItem.Mod" placeholder="ModificationDate"/></td>
+  <td><input type="text" ng-model="nItem.Crea" placeholder="CreationDate"/></td>
+
+</tr>
+</table>
+
+</div>

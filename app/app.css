@@ -1,0 +1,88 @@
+/* app css stylesheet */
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Amatic+SC:700|Bungee+Outline|Bungee+Shade|Roboto');
+
+html {
+  height: 100%;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eeeeee), to(#d0d0d6));
+}
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid #11c2d6;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+  font-weight: bold;
+  display: flex;
+
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+  flex-grow: 1;
+  text-align: center;
+
+
+}
+
+.menu > li + li:before {
+
+}
+
+
+.title {
+  font-family: 'Bungee Shade', cursive, Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 5em;
+  color: green;
+  margin: 0;
+  letter-spacing: 0;
+  font-weight: 700;
+  background: url(img/HERO2.png) repeat;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+.headCont {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+input {
+  height: 2.5rem;
+}
+
+.container {
+  border: 0.1em solid #11c2d6;
+  padding: 2em;
+  margin: 1em;
+
+}
+a {
+  color: darkslateblue;
+}
+
+
+table {
+  width: 100%;
+}
+
+table, th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #6ddb7a;
+  color: white;
+}
+
+
+tr:hover {background-color:  #ccccff;}
